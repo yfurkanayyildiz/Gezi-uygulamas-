@@ -7,7 +7,7 @@ Yapay zeka destekli kişisel seyahat planlama uygulaması. Destinasyon girin, AI
 - **AI Gezi Planı** — Destinasyon ve tarih girerek Gemini ile otomatik güzergah oluşturun
 - **Güzergah Yönetimi** — Günlere aktivite ekleyin, saati ve kategoriyi belirleyin
 - **Harita** — Aktiviteler OpenStreetMap üzerinde pin olarak görünür, güzergah çizgisiyle bağlanır
-- **Bütçe Takibi** — Toplam bütçe, harcanan tutar, kategori bazlı dağılım
+- **Bütçe Takibi** — Toplam bütçe, harcanan tutar, kategori bazlı dağılım(Şu anlık doğru bütçe tahmini yapamıyor)
 - **Fotoğraflar** — Her aktivite ve gün için Wikipedia / Google Places fotoğrafları
 - **Veri Kalıcılığı** — Tüm veriler tarayıcının localStorage'ına kaydedilir
 
