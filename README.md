@@ -1,16 +1,54 @@
-# React + Vite
+# ✈️ Seyahat Planlayıcı
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Yapay zeka destekli kişisel seyahat planlama uygulaması. Destinasyon girin, AI sizin için gün gün plan oluştursun.
 
-Currently, two official plugins are available:
+## Özellikler
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **AI Gezi Planı** — Destinasyon ve tarih girerek Gemini ile otomatik güzergah oluşturun
+- **Güzergah Yönetimi** — Günlere aktivite ekleyin, saati ve kategoriyi belirleyin
+- **Harita** — Aktiviteler OpenStreetMap üzerinde pin olarak görünür, güzergah çizgisiyle bağlanır
+- **Bütçe Takibi** — Toplam bütçe, harcanan tutar, kategori bazlı dağılım
+- **Fotoğraflar** — Her aktivite ve gün için Wikipedia / Google Places fotoğrafları
+- **Veri Kalıcılığı** — Tüm veriler tarayıcının localStorage'ına kaydedilir
 
-## React Compiler
+## Kurulum
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```bash
+npm install
+npm run dev
+```
 
-## Expanding the ESLint configuration
+Tarayıcıda `http://localhost:5173` adresini açın.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## API Keyler
+
+Ayarlar (⚙️) menüsünden girilir. Tüm keyler yalnızca tarayıcınızda saklanır.
+
+### Google Gemini (AI Plan — Ücretsiz)
+AI ile otomatik gezi planı oluşturmak için gerekli.
+
+1. [aistudio.google.com/apikey](https://aistudio.google.com/apikey) adresine gidin
+2. **Create API Key** → **Create API key in new project**
+3. Ayarlar → Gemini API Key alanına yapıştırın
+
+Günlük 1500 istek ücretsiz, kredi kartı gerekmez.
+
+### Google Places (Fotoğraflar — İsteğe Bağlı)
+Yüksek kaliteli konum fotoğrafları için. Yoksa Wikipedia fotoğrafları kullanılır.
+
+1. [console.cloud.google.com](https://console.cloud.google.com) → **Places API (New)** etkinleştir
+2. **Credentials** → **Create API Key**
+3. Ayarlar → Google Places API Key alanına yapıştırın
+
+Ayda $200 ücretsiz kredi (~28.000 fotoğraf). Kredi kartı zorunlu.
+
+## Teknolojiler
+
+| Katman | Teknoloji |
+|---|---|
+| Frontend | React 19 + Vite |
+| Harita | React Leaflet + OpenStreetMap |
+| AI | Google Gemini (`gemini-3-flash-preview`) |
+| Fotoğraf | Google Places API / Wikipedia API |
+| Stil | Vanilla CSS (dark theme) |
+| Veri | localStorage |
